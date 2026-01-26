@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,25 @@
     <title>Document</title>
 </head>
 <body>
+
+<!--home-->
+<section id="home">
+<?php  require 'header.php'; ?> 
+<?php require 'imageslider.php';?>
+</section>
+
+
+<?php require 'mapcard.php';?>
+
+<!--footer-->
+<section id=footer>
+<?php require 'footer.php'; ?>
+</section>
+
     
+
+
+
+
 </body>
 </html>
