@@ -12,7 +12,7 @@ include_once 'libs.php';
 
 
 #carouselExampleSlidesOnly img {
-  height: 700px;   /* Fixed height */
+  height: 800px;   /* Fixed height */
   object-fit: cover; /* Crop image to fill container without stretching */
 }
 
