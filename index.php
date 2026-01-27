@@ -14,8 +14,15 @@
 <?php require 'imageslider.php';?>
 </section>
 
+<?php require 'content.php';?>
+
+<?php require 'news.php';?>
 
 <?php require 'mapcard.php';?>
+
+
+
+
 
 <!--footer-->
 <section id=footer>
