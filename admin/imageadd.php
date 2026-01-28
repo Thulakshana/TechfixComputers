@@ -11,20 +11,18 @@ include_once 'lib.php';
     <title>Document</title>
 </head>
 <body>
-<h1>contact information</h1>
-<?php require 'contact.php';?>
-<hr>
-<hr>
-<?php require 'brands.php';?>
+    
 
-<hr>
-<hr>
-<?php require 'showbrand.php';?>
 
-<hr>
-<hr>
+<form action="homeup.php" method="POST" enctype="multipart/form-data">
+    <input type="file" name="image" required>
+    <br><br>
+    <button type="submit" name="upload">Upload</button>
+</form>
 
-<?php require 'imageadd.php';?>
+
+
+
 
 </body>
 </html>
