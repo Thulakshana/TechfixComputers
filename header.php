@@ -79,111 +79,240 @@ if ($result && mysqli_num_rows($result) == 1) {
 
          <!--dropdown-->
 
-         <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Gaming Laptop
-  </a>
-  <ul class="dropdown-menu" aria-labelledby="homeDropdown">
-    <li><a class="dropdown-item" href="#">Subpage 1</a></li>
-    <li><a class="dropdown-item" href="#">Subpage 2</a></li>
-    <li><a class="dropdown-item" href="#">Subpage 3</a></li>
-  </ul>
-</li>
-
-<!--second-->
-<li class="nav-item">
-         <!--dropdown-->
          
-         <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Laptop
-  </a>
-  <ul class="dropdown-menu" aria-labelledby="homeDropdown">
-    <li><a class="dropdown-item" href="#">Subpage 1</a></li>
-    <li><a class="dropdown-item" href="#">Subpage 2</a></li>
-    <li><a class="dropdown-item" href="#">Subpage 3</a></li>
-  </ul>
-</li>
 
-
-<!--third-->
-
-
+<!--one desktop-->
 <li class="nav-item">
-         <!--dropdown-->
          
-         <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+         <?php
+// fetch laptop brands
+$sql = "SELECT brand_id, brand FROM pc";
+$result = mysqli_query($connect, $sql);
+?>
+      <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle active"
+     href="#"
+     id="homeDropdown"
+     role="button"
+     data-bs-toggle="dropdown"
+     aria-expanded="false">
     Desktop PC
   </a>
+
   <ul class="dropdown-menu" aria-labelledby="homeDropdown">
-    <li><a class="dropdown-item" href="#">Subpage 1</a></li>
-    <li><a class="dropdown-item" href="#">Subpage 2</a></li>
-    <li><a class="dropdown-item" href="#">Subpage 3</a></li>
+
+    <?php
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+            <li>
+              <a class="dropdown-item"
+                 href="products.php?brand_id=<?php echo $row['brand_id']; ?>">
+                 <?php echo $row['brand']; ?>
+              </a>
+            </li>
+            <?php
+        }
+    } else {
+        ?>
+        <li>
+          <span class="dropdown-item-text text-muted">No Brands Found</span>
+        </li>
+        <?php
+    }
+    ?>
+
   </ul>
 </li>
+  </li>
 
-<!--fourth-->
+
+<!--two laptop-->
+
+
 <li class="nav-item">
-         <!--dropdown-->
+        
+         <?php
+
+// fetch laptop brands
+$sql = "SELECT brand_id, brand FROM laptop";
+$result = mysqli_query($connect, $sql);
+?>
          
          <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Components
+  <a class="nav-link dropdown-toggle active"
+     href="#"
+     id="homeDropdown"
+     role="button"
+     data-bs-toggle="dropdown"
+     aria-expanded="false">
+    Laptop
   </a>
+
   <ul class="dropdown-menu" aria-labelledby="homeDropdown">
-    <li><a class="dropdown-item" href="#">Subpage 1</a></li>
-    <li><a class="dropdown-item" href="#">Subpage 2</a></li>
-    <li><a class="dropdown-item" href="#">Subpage 3</a></li>
+
+    <?php
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+            <li>
+              <a class="dropdown-item"
+                 href="products.php?brand_id=<?php echo $row['brand_id']; ?>">
+                 <?php echo $row['brand']; ?>
+              </a>
+            </li>
+            <?php
+        }
+    } else {
+        ?>
+        <li>
+          <span class="dropdown-item-text text-muted">No Brands Found</span>
+        </li>
+        <?php
+    }
+    ?>
+
   </ul>
 </li>
  </li>
 
- <!--fifth-->
+ <!--third asso-->
  <li class="nav-item">
-         <!--dropdown-->
-         
-         <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Accesorries
+       
+         <?php
+
+// fetch laptop brands
+$sql = "SELECT brand_id, brand FROM asso";
+$result = mysqli_query($connect, $sql);
+?>
+           <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle active"
+     href="#"
+     id="homeDropdown"
+     role="button"
+     data-bs-toggle="dropdown"
+     aria-expanded="false">
+    assocceries
   </a>
+
   <ul class="dropdown-menu" aria-labelledby="homeDropdown">
-    <li><a class="dropdown-item" href="#">Subpage 1</a></li>
-    <li><a class="dropdown-item" href="#">Subpage 2</a></li>
-    <li><a class="dropdown-item" href="#">Subpage 3</a></li>
+
+    <?php
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+            <li>
+              <a class="dropdown-item"
+                 href="products.php?brand_id=<?php echo $row['brand_id']; ?>">
+                 <?php echo $row['brand']; ?>
+              </a>
+            </li>
+            <?php
+        }
+    } else {
+        ?>
+        <li>
+          <span class="dropdown-item-text text-muted">No Brands Found</span>
+        </li>
+        <?php
+    }
+    ?>
+
   </ul>
 </li>
  </li>
 
 
- <!--sixth-->
+ <!--fourth software-->
  <li class="nav-item">
-         <!--dropdown-->
+        
          
-         <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+         <?php
+
+// fetch laptop brands
+$sql = "SELECT brand_id, brand FROM software";
+$result = mysqli_query($connect, $sql);
+?>
+           <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle active"
+     href="#"
+     id="homeDropdown"
+     role="button"
+     data-bs-toggle="dropdown"
+     aria-expanded="false">
     Software
   </a>
+
   <ul class="dropdown-menu" aria-labelledby="homeDropdown">
-    <li><a class="dropdown-item" href="#">Subpage 1</a></li>
-    <li><a class="dropdown-item" href="#">Subpage 2</a></li>
-    <li><a class="dropdown-item" href="#">Subpage 3</a></li>
+
+    <?php
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+            <li>
+              <a class="dropdown-item"
+                 href="products.php?brand_id=<?php echo $row['brand_id']; ?>">
+                 <?php echo $row['brand']; ?>
+              </a>
+            </li>
+            <?php
+        }
+    } else {
+        ?>
+        <li>
+          <span class="dropdown-item-text text-muted">No Brands Found</span>
+        </li>
+        <?php
+    }
+    ?>
+
   </ul>
 </li>
  </li>
 
-<!--seven-->
+<!--fifth used item-->
 <li class="nav-item">
-         <!--dropdown-->
          
-         <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Used item
+         
+         <?php
+
+// fetch laptop brands
+$sql = "SELECT brand_id, brand FROM used";
+$result = mysqli_query($connect, $sql);
+?>
+           <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle active"
+     href="#"
+     id="homeDropdown"
+     role="button"
+     data-bs-toggle="dropdown"
+     aria-expanded="false">
+    used items
   </a>
+
   <ul class="dropdown-menu" aria-labelledby="homeDropdown">
-    <li><a class="dropdown-item" href="#">Subpage 1</a></li>
-    <li><a class="dropdown-item" href="#">Subpage 2</a></li>
-    <li><a class="dropdown-item" href="#">Subpage 3</a></li>
+
+    <?php
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+            <li>
+              <a class="dropdown-item"
+                 href="products.php?brand_id=<?php echo $row['brand_id']; ?>">
+                 <?php echo $row['brand']; ?>
+              </a>
+            </li>
+            <?php
+        }
+    } else {
+        ?>
+        <li>
+          <span class="dropdown-item-text text-muted">No Brands Found</span>
+        </li>
+        <?php
+    }
+    ?>
+
   </ul>
 </li>
  </li>
